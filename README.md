@@ -27,14 +27,14 @@ A simple Flask-based web app that allows HRs or hiring managers to upload multip
 ---
 
 ## Project Structure
-resume-skill-matcher/
-│
-├── app.py # Main Flask application
-├── uploads/ # Folder to store uploaded resumes
-├── templates/
-│ ├── index.html # Input form (upload + job desc)
-│ └── result.html # Ranked results display
-└── README.md 
+resume-skill-matcher<br>
+│<br>
+├── app.py # Main Flask application<br>
+├── uploads/ # Folder to store uploaded resumes<br>
+├── templates/<br>
+│ ├── index.html # Input form (upload + job desc)<br>
+│ └── result.html # Ranked results display<br>
+└── README.md <br>
 
 ## 🧪 How to Run Locally
 
