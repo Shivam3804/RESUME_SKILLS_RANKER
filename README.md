@@ -36,17 +36,20 @@ resume-skill-matcher<br>
 │ └── result.html # Ranked results display<br>
 └── README.md <br>
 
-## 🧪 How to Run Locally
+## How to Run Locally
 
 1. **Clone the repo:**
 
    ```bash
    git clone https://github.com/Shivam3804/RESUME_SKILLS_RANKER
    cd RESUME_SKILLS_RANKER
-
+2. Install library
+   ```bash
    pip install flask pymupdf
-
+   
+3. Run file
+   ```bash
    python app.py
-
+4. Run in browser
    http://127.0.0.1:5000/
 
