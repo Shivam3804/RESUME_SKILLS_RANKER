@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Match Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Resume Ranking Results</h2>
+
+    <div class="mb-4">
+        <h5>📝 Job Description (for matching):</h5>
+        <div class="border rounded p-3 bg-white">{{ job_desc }}</div>
+        <p class="text-muted mt-2">Analyzed on: {{ timestamp }}</p>
+    </div>
+
+    <div class="card shadow-sm p-4">
+        <h4 class="mb-4">📊 Ranked Resumes</h4>
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Filename</th>
+                        <th>Matched Skills</th>
+                        <th>Job Keyword Overlap</th>
+                        <th>Skill Score</th>
+                        <th>Job Score</th>
+                        <th>Total Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in results %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ r.filename }}</td>
+                        <td>
+                            {% for skill in r.matched_skills %}
+                                <span class="badge bg-success">{{ skill }}</span>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for word in r.job_overlap %}
+                                <span class="badge bg-info text-dark">{{ word }}</span>
+                            {% endfor %}
+                        </td>
+                        <td>{{ r.skill_score }}</td>
+                        <td>{{ r.job_score }}</td>
+                        <td><strong>{{ r.total_score }}</strong></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-outline-primary">🔁 Upload More Resumes</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
