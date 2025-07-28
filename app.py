@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 import fitz
 import os
 from werkzeug.utils import secure_filename
-from collections import Counter
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
